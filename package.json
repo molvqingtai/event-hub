@@ -7,7 +7,7 @@
     "dev": "tsc --watch",
     "build": "npm run clean && tsc",
     "test": "jest",
-    "lint": "eslint src --ext .js,.ts --cache --fix",
+    "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
     "prepare": "husky install"
   },
@@ -25,12 +25,14 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
+    "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-config-standard-with-typescript": "^20.0.0",
     "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^4.3.1",
@@ -41,6 +43,7 @@
     "typescript": "^4.2.4"
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": "eslint --cache --fix"
+    "src/**/*.{js,ts}": "eslint --cache --fix",
+    "__tests__/**/*.{js,ts}": "eslint --cache --fix"
   }
 }
