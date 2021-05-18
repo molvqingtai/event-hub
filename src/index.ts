@@ -3,7 +3,7 @@ export default class EventHub {
   private readonly onceEvents = new Set<string>()
 
   on(event: string, handler: Function): void {
-    this.hub.set(event, this.hub.get(event)?.add(handler) ?? new Set<Function>().add(handler))
+    this.hub.set(event, this.hub.get(event)?.add(handler) ?? new Set<Function>([handler]))
   }
 
   once(event: string, handler: Function): void {
