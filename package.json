@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc",
+    "build": "npm run clean && tsc",
+    "test": "jest",
     "lint": "eslint src --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
     "prepare": "husky install"
@@ -34,6 +35,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^4.3.1",
     "husky": "^6.0.0",
+    "jest": "^26.6.3",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "typescript": "^4.2.4"
