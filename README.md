@@ -76,7 +76,7 @@ hub.emit('custom-send','Hello, EventHub!')
 - **Arguments:**
 
   - `{string} event`
-  - `...args`
+  - `{Array<unknown>} ...args`
 
   Trigger an event on the current instance. Any additional arguments will be passed into the listener’s handler function.
 

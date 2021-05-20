@@ -13,7 +13,7 @@ export default class EventHub {
     this.onceEvents.add(event)
   }
 
-  emit(event: string, ...args: []): void {
+  emit(event: string, ...args: unknown[]): void {
     this.hub.get(event)?.forEach((handler) => {
       handler(...args)
       this.onceEvents.has(event) && this.onceEvents.delete(event) && this.hub.delete(event)
