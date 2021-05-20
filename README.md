@@ -12,7 +12,7 @@ Todo...
 
 ## Documentation
 
-### Get started
+### Get Started
 
 > It is recommended to use the `kebab-case` event name
 
