@@ -2,8 +2,10 @@ export default class EventHub {
   private readonly hub = new Map<string, Set<Function>>()
   private readonly onceEvents = new Set<string>()
 
-  on(event: string, handler: Function): void {
-    this.hub.set(event, this.hub.get(event)?.add(handler) ?? new Set<Function>([handler]))
+  on(event: string | string[], handler: Function): void {
+    ;[event].flat().forEach((event) => {
+      this.hub.set(event, this.hub.get(event)?.add(handler) ?? new Set<Function>([handler]))
+    })
   }
 
   once(event: string, handler: Function): void {
@@ -11,9 +13,9 @@ export default class EventHub {
     this.onceEvents.add(event)
   }
 
-  emit(event: string, args?: []): void {
+  emit(event: string, ...args: []): void {
     this.hub.get(event)?.forEach((handler) => {
-      handler(args)
+      handler(...args)
       this.onceEvents.has(event) && this.onceEvents.delete(event) && this.hub.delete(event)
     })
   }
