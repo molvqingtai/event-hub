@@ -2,7 +2,7 @@
   "name": "event-hub",
   "version": "1.0.0",
   "description": "📡 A short and sweet event hub",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "tsc --watch",
     "build": "npm run clean && tsc",
@@ -15,8 +15,13 @@
     "type": "git",
     "url": "git+https://github.com/molvqingtai/event-hub.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "event-hub",
+    "event-bus",
+    "bus",
+    "hub"
+  ],
+  "author": "molvqingtai",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/molvqingtai/event-hub/issues"
