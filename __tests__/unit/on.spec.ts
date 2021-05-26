@@ -1,3 +1,0 @@
-test('on', () => {
-  // actual test
-})
