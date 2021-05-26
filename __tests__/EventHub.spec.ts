@@ -1,6 +1,6 @@
 import EventHub from '../src'
 
-describe('EventHub', () => {
+describe('EventHub unit test', () => {
   let hub: EventHub
 
   beforeEach(() => {
