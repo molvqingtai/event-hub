@@ -1,12 +1,13 @@
 import EventHub from '../src'
 
 describe('EventHub', () => {
-  test('Instance', () => {
-    expect(new EventHub()).toBeInstanceOf(EventHub)
+  let hub: EventHub
+
+  beforeEach(() => {
+    hub = new EventHub()
   })
 
   test('On and emit', () => {
-    const hub = new EventHub()
     const handler = jest.fn()
     hub.on('test-event', handler)
     hub.emit('test-event')
@@ -14,7 +15,6 @@ describe('EventHub', () => {
   })
 
   test('On and off', () => {
-    const hub = new EventHub()
     const handler = jest.fn()
     hub.on('test-event', handler)
     hub.off('test-event')
@@ -23,7 +23,6 @@ describe('EventHub', () => {
   })
 
   test('Once and emit', () => {
-    const hub = new EventHub()
     const handler = jest.fn()
     hub.once('test-event', handler)
     hub.emit('test-event')
@@ -32,7 +31,6 @@ describe('EventHub', () => {
   })
 
   test('Off all event', () => {
-    const hub = new EventHub()
     const handler = jest.fn()
     hub.on('test-event', handler)
     hub.on('test-event', handler)
@@ -41,8 +39,7 @@ describe('EventHub', () => {
     expect(handler).not.toBeCalled()
   })
 
-  test('off handler', () => {
-    const hub = new EventHub()
+  test('Off handler', () => {
     const handlerOne = jest.fn()
     const handlerTwo = jest.fn()
     hub.on('test-event', handlerOne)
