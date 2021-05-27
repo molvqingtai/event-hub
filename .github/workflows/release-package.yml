@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm lint
-      - run: npm test
+      - run: npm run lint
+      - run: npm run test
 
   build:
     needs: tests
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm build
+      - run: npm run build
 
   publish:
     needs: build
