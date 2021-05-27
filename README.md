@@ -2,9 +2,21 @@
 
 🚌 This is a minimalist event hub.
 
+
+
 ## Install
 
-Todo...
+```shell
+npm i @resreq/event-hub
+```
+
+**or**
+
+```shell
+yarn add @resreq/event-hub
+```
+
+
 
 ## Documentation
 
