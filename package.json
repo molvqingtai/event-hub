@@ -63,7 +63,7 @@
     "hooks": {
       "before:init": [
         "npm run lint",
-        "npm test"
+        "npm run test"
       ],
       "after:bump": "npm run build",
       "after:git:release": "echo After git push, before github release",
