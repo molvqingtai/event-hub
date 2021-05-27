@@ -22,9 +22,11 @@ yarn add @resreq/event-hub
 
 ### Get Started
 
-> It is recommended to use the `kebab-case` event name
+> It is recommended to use the `kebab-case` event name.
 
 ```js
+import EventHub from '@resreq/event-hub'
+
 const hub = new EventHub()
 
 hub.on('custom-send', (message) => {

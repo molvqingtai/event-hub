@@ -33,7 +33,7 @@
   "homepage": "https://github.com/molvqingtai/event-hub#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-angular": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.3.1",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
@@ -66,11 +66,10 @@
         "npm run test"
       ],
       "after:bump": "npm run build",
-      "after:git:release": "echo After git push, before github release",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     },
     "git": {
-      "commitMessage": "feat: :package: release ${version}"
+      "commitMessage": "chore: :package: release ${version}"
     },
     "github": {
       "release": true
@@ -83,7 +82,6 @@
     }
   },
   "publishConfig": {
-    "access": "public",
-    "name": "@resreq/event-hub"
+    "access": "public"
   }
 }
