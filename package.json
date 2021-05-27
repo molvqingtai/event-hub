@@ -1,7 +1,7 @@
 {
-  "name": "event-hub",
+  "name": "@resreq/event-hub",
   "version": "1.0.0",
-  "description": "📡 A short and sweet event hub",
+  "description": "This is a minimalist event hub.",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc --watch",
@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "jest": "^26.6.3",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
+    "release-it": "^14.7.0",
     "ts-jest": "^26.5.6",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
@@ -56,5 +58,28 @@
   "lint-staged": {
     "src/**/*.{js,ts}": "eslint --cache --fix",
     "__tests__/**/*.{js,ts}": "eslint --cache --fix"
+  },
+  "release-it": {
+    "hooks": {
+      "before:init": [
+        "npm run lint",
+        "npm test"
+      ],
+      "after:bump": "npm run build",
+      "after:git:release": "echo After git push, before github release",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
