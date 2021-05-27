@@ -70,7 +70,7 @@
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     },
     "git": {
-      "commitMessage": "feat: release ${version}"
+      "commitMessage": "feat: :package: release ${version}"
     },
     "github": {
       "release": true
@@ -83,6 +83,7 @@
     }
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "name": "@resreq/event-hub"
   }
 }
