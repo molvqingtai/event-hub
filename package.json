@@ -2,7 +2,7 @@
   "name": "@resreq/event-hub",
   "version": "1.3.0",
   "description": "This is a minimalist event hub.",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "dev": "tsc --watch",
     "build": "npm run clean && tsc",
