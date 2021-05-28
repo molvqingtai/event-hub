@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/molvqingtai/event-hub/compare/1.2.0...1.3.0) (2021-05-28)
+
+
+### Features
+
+* :package: release 1.2.1 ([44064b9](https://github.com/molvqingtai/event-hub/commit/44064b9eea119019e29d6773d85794566b316360))
+
 ## [1.2.2](https://github.com/molvqingtai/event-hub/compare/1.2.1...1.2.2) (2021-05-27)
 
 ## [1.2.1](https://github.com/molvqingtai/event-hub/compare/1.2.0...1.2.1) (2021-05-27)
