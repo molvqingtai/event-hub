@@ -1,6 +1,6 @@
 # EventHub
 
-[![workflow](https://github.com/molvqingtai/event-hub/actions/workflows/main.yml/badge.svg)](https://github.com/molvqingtai/event-hub/actions)  [![npm](https://img.shields.io/npm/v/@resreq/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)  [![download](https://img.shields.io/npm/dt/@resreq/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)
+[![workflow](https://github.com/molvqingtai/event-hub/actions/workflows/main.yml/badge.svg)](https://github.com/molvqingtai/event-hub/actions)  [![coverage](coverage/badge.svg)]()  [![npm](https://img.shields.io/npm/v/@resreq/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)  [![download](https://img.shields.io/npm/dt/@resreq/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)
 
 🚌 This is a minimalist event hub.
 

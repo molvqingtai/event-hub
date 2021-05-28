@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "npm run clean && tsc",
-    "test": "jest",
+    "test": "jest && make-coverage-badge",
     "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
     "prepare": "husky install",
@@ -50,6 +50,7 @@
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^11.0.0",
+    "make-coverage-badge": "^1.2.0",
     "prettier": "^2.3.0",
     "release-it": "^14.7.0",
     "ts-jest": "^26.5.6",
