@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/molvqingtai/event-hub/compare/1.3.0...1.3.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* package main path ([7626f23](https://github.com/molvqingtai/event-hub/commit/7626f23f76a87d75c7d57430d8511c877e3596cd))
+
 # [1.3.0](https://github.com/molvqingtai/event-hub/compare/1.2.0...1.3.0) (2021-05-28)
 
 
