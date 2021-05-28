@@ -71,7 +71,7 @@
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     },
     "git": {
-      "commitMessage": "chore: :package: release ${version}"
+      "commitMessage": "chore: :package:  Release ${version}"
     },
     "github": {
       "release": true
