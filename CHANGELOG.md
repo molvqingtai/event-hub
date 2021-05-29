@@ -1,3 +1,5 @@
+## [1.3.3](https://github.com/molvqingtai/event-hub/compare/1.3.2...1.3.3) (2021-05-29)
+
 ## [1.3.2](https://github.com/molvqingtai/event-hub/compare/1.3.1...1.3.2) (2021-05-28)
 
 
