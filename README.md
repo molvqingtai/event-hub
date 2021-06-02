@@ -22,6 +22,22 @@ yarn add @resreq/event-hub
 
 
 
+**If you use the [Deno](https://deno.land/)**
+
+> Please add to import_map.json.
+
+```json
+{
+  "imports": {
+    "EventHub": "https://deno.land/x/event_hub/src/index.ts"
+  }
+}
+```
+
+
+
+
+
 ## Documentation
 
 ### Get Started
