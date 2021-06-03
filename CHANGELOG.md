@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/molvqingtai/event-hub/compare/1.3.4...1.3.5) (2021-06-03)
+
+
+### Bug Fixes
+
+* listening to the same handler multiple times only triggers the problem once ([c32e917](https://github.com/molvqingtai/event-hub/commit/c32e917f3cf03b7ee78fd1c5f064efbfc1c4da96))
+
 ## [1.3.4](https://github.com/molvqingtai/event-hub/compare/1.3.3...1.3.4) (2021-06-02)
 
 ## [1.3.3](https://github.com/molvqingtai/event-hub/compare/1.3.2...1.3.3) (2021-05-29)
