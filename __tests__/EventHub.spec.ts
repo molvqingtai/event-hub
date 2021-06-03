@@ -8,18 +8,26 @@ describe('EventHub unit test', () => {
   })
 
   test('On and emit', () => {
-    const handler = jest.fn()
-    hub.on('test-event', handler)
-    hub.emit('test-event')
-    expect(handler).toBeCalledTimes(1)
+    const handlerOne = jest.fn()
+    const handlerTwo = jest.fn()
+    hub.on('one-event', handlerOne)
+    hub.on(['one-event', 'two-event'], handlerTwo)
+    hub.emit('one-event')
+    hub.emit('two-event')
+    expect(handlerOne).toBeCalledTimes(1)
+    expect(handlerTwo).toBeCalledTimes(2)
   })
 
   test('On and off', () => {
-    const handler = jest.fn()
-    hub.on('test-event', handler)
-    hub.off('test-event')
-    hub.emit('test-event')
-    expect(handler).not.toBeCalled()
+    const handlerOne = jest.fn()
+    const handlerTwo = jest.fn()
+    hub.on('one-event', handlerOne)
+    hub.on('tow-event', handlerTwo)
+    hub.off('one-event')
+    hub.emit('one-event')
+    hub.emit('tow-event')
+    expect(handlerOne).not.toBeCalled()
+    expect(handlerTwo).toBeCalledTimes(1)
   })
 
   test('Once and emit', () => {
@@ -32,10 +40,11 @@ describe('EventHub unit test', () => {
 
   test('Off all event', () => {
     const handler = jest.fn()
-    hub.on('test-event', handler)
-    hub.on('test-event', handler)
+    hub.on('one-event', handler)
+    hub.on('two-event', handler)
     hub.off()
-    hub.emit('test-event')
+    hub.emit('one-event')
+    hub.emit('two-event')
     expect(handler).not.toBeCalled()
   })
 

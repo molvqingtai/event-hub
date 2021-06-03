@@ -1,34 +1,38 @@
 export default class EventHub {
-  private readonly hub = new Map<string, Set<Function>>()
-  private readonly onceEvents = new Set<string>()
+  private readonly listeners = new Map<string, Set<{ once: boolean; handler: Function }>>()
 
-  on(event: string | string[], handler: Function): void {
+  private add(event: string | string[], handler: Function, once: boolean): void {
     ;[event].flat().forEach((event) => {
-      this.hub.set(event, this.hub.get(event)?.add(handler) ?? new Set<Function>([handler]))
+      this.listeners.set(event, this.listeners.get(event)?.add({ once, handler }) ?? new Set([{ once, handler }]))
     })
   }
 
+  on(event: string | string[], handler: Function): void {
+    this.add(event, handler, false)
+  }
+
   once(event: string, handler: Function): void {
-    this.on(event, handler)
-    this.onceEvents.add(event)
+    this.add(event, handler, true)
   }
 
   emit(event: string, ...args: unknown[]): void {
-    this.hub.get(event)?.forEach((handler) => {
+    this.listeners.get(event)?.forEach(({ once, handler }) => {
       handler(...args)
-      this.onceEvents.has(event) && this.onceEvents.delete(event) && this.hub.delete(event)
+      once && this.listeners.delete(event)
     })
   }
 
   off(event?: string | string[], handler?: Function): void {
     if (event === undefined) {
-      this.hub.clear()
+      this.listeners.clear()
     } else {
       ;[event].flat().forEach((event) => {
         if (handler === undefined) {
-          this.hub.delete(event)
+          this.listeners.delete(event)
         } else {
-          this.hub.get(event)?.forEach((h, _, handlers) => h === handler && handlers.delete(handler))
+          this.listeners.get(event)?.forEach((payload, _, payloads) => {
+            handler === payload.handler && payloads.delete(payload)
+          })
         }
       })
     }

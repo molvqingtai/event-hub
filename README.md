@@ -29,7 +29,7 @@ Please add to `import_map.json`.
 ```json
 {
   "imports": {
-    "EventHub": "https://deno.land/x/event_hub/index.ts"
+    "EventHub": "https://deno.land/x/event_hub/src/index.ts"
   }
 }
 ```
