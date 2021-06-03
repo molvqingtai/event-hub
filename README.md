@@ -24,12 +24,12 @@ yarn add @resreq/event-hub
 
 **If you use the [Deno](https://deno.land/)**
 
-> Please add to import_map.json.
+Please add to `import_map.json`.
 
 ```json
 {
   "imports": {
-    "EventHub": "https://deno.land/x/event_hub/src/index.ts"
+    "EventHub": "https://deno.land/x/event_hub/index.ts"
   }
 }
 ```
@@ -42,7 +42,7 @@ yarn add @resreq/event-hub
 
 ### Get Started
 
-> It is recommended to use the `kebab-case` event name.
+It is recommended to use the `kebab-case` event name.
 
 ```js
 import EventHub from '@resreq/event-hub'
