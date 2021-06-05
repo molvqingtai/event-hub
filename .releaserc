@@ -1,3 +1,4 @@
 {
+  "defaultBranch": "main",
   "branches": ["main", "next", "beta"]
 }
