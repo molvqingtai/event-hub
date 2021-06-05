@@ -1,6 +1,6 @@
 {
   "name": "@resreq/event-hub",
-  "version": "0.0.0-development",
+  "version": "1.4.1",
   "description": "This is a minimalist event hub.",
   "main": "dist/index.js",
   "type": "module",
