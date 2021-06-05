@@ -11,41 +11,41 @@ jobs:
   linter:
     runs-on: ubuntu-latest
     steps:
-      - name Checkout code 
+      - name: Checkout code 
         uses: actions/checkout@v2
-      - name Initialize environment
+      - name: Initialize environment
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name Run linter
+      - name: Run linter
         run: npm ci
         run: npm run lint
   tests:
     needs: linter
     runs-on: ubuntu-latest
     steps:
-      - name Checkout code 
+      - name: Checkout code 
         uses: actions/checkout@v2
-      - name Initialize environment
+      - name: Initialize environment
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name Run tests
+      - name: Run tests
         run: npm ci
         run: npm run test
   release:
     needs: tests
     runs-on: ubuntu-latest
     steps:
-      - name Checkout code 
+      - name: Checkout code 
         uses: actions/checkout@
-      - name Initialize environment
+      - name: Initialize environment
         uses: actions/setup-node@v2
         with:
           node-version: 14
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name Run publish
+      - name: Run publish
         run: npm ci
         run: npx semantic-release
