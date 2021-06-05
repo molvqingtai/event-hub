@@ -1,6 +1,6 @@
 # EventHub
 
-[![version](https://img.shields.io/github/v/release/molvqingtai/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)  [![deno land](http://img.shields.io/badge/available%20on-deno.land/x-lightgrey.svg?logo=deno&labelColor=black&color=blue)](https://deno.land/x/event_hub)  [![workflow](https://github.com/molvqingtai/event-hub/actions/workflows/main.yml/badge.svg)](https://github.com/molvqingtai/event-hub/actions)  [![coverage](coverage/badge.svg)](coverage/coverage-summary.json)   [![download](https://img.shields.io/npm/dt/@resreq/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)  [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![version](https://img.shields.io/github/v/release/molvqingtai/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)  [![deno land](http://img.shields.io/badge/available%20on-deno.land/x-lightgrey.svg?logo=deno&labelColor=black&color=blue)](https://deno.land/x/event_hub)  [![workflow](https://github.com/molvqingtai/event-hub/actions/workflows/release.yml/badge.svg)](https://github.com/molvqingtai/event-hub/actions)  [![coverage](coverage/badge.svg)](coverage/coverage-summary.json)   [![download](https://img.shields.io/npm/dt/@resreq/event-hub)](https://www.npmjs.com/package/@resreq/event-hub)  [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 
 
