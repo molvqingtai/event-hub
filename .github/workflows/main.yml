@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
   tests:
-    needs: lint
+    needs: linter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
