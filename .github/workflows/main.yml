@@ -36,6 +36,7 @@ jobs:
         with:
           node-version: 14
         env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm ci
       - run: npx semantic-release
