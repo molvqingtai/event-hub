@@ -1,14 +1,14 @@
-name: CI/CD
+name: CI
 
 on:
   push:
     branches:
-      - '**'
+      - master
   pull_request:
     branches:
       - master
 jobs:
-  lint:
+  linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm run lint
-  test:
+  tests:
     needs: lint
     runs-on: ubuntu-latest
     steps:
