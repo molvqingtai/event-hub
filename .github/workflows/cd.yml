@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 14
       # https://github.com/semantic-release/git/issues/209
-      - run: npm ci --only=production --ignore-scripts
+      - run: npm ci --ignore-scripts
       - run: npx semantic-release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
