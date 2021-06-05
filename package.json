@@ -1,6 +1,6 @@
 {
   "name": "@resreq/event-hub",
-  "version": "1.3.5",
+  "version": "0.0.0-development",
   "description": "This is a minimalist event hub.",
   "main": "dist/index.js",
   "type": "module",
@@ -10,12 +10,11 @@
     "test": "jest && make-coverage-badge",
     "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
-    "prepare": "husky install",
-    "release": "release-it"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/molvqingtai/event-hub.git"
+    "url": "https://github.com/molvqingtai/event-hub.git"
   },
   "keywords": [
     "event-hub",
@@ -36,7 +35,6 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "@release-it/conventional-changelog": "^2.0.1",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.3.1",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
@@ -54,7 +52,7 @@
     "lint-staged": "^11.0.0",
     "make-coverage-badge": "^1.2.0",
     "prettier": "^2.3.0",
-    "release-it": "^14.7.0",
+    "semantic-release": "^17.4.3",
     "ts-jest": "^26.5.6",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
@@ -62,28 +60,6 @@
   "lint-staged": {
     "src/**/*.{js,ts}": "eslint --cache --fix",
     "__tests__/**/*.{js,ts}": "eslint --cache --fix"
-  },
-  "release-it": {
-    "hooks": {
-      "before:init": [
-        "npm run lint",
-        "npm run test"
-      ],
-      "after:bump": "npm run build",
-      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-    },
-    "git": {
-      "commitMessage": "chore: :package:  Release ${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular",
-        "infile": "CHANGELOG.md"
-      }
-    }
   },
   "publishConfig": {
     "access": "public"
