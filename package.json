@@ -4,6 +4,7 @@
   "description": "This is a minimalist event hub.",
   "main": "dist/index.js",
   "type": "module",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
     "build": "npm run clean && tsc",
