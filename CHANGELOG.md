@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/molvqingtai/event-hub/compare/v1.4.1...v1.4.2) (2021-06-15)
+
+
+### Performance Improvements
+
+* upgrade jest deps ([b0da15a](https://github.com/molvqingtai/event-hub/commit/b0da15ac2779a53ca1c9ab8c9a59af3fe0505611))
+
 ## [1.4.1](https://github.com/molvqingtai/event-hub/compare/v1.4.0...v1.4.1) (2021-06-05)
 
 
