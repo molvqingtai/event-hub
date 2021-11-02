@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/molvqingtai/event-hub/compare/v1.4.2...v1.4.3) (2021-11-02)
+
+
+### Performance Improvements
+
+* simplify ActionS release process ([1159002](https://github.com/molvqingtai/event-hub/commit/115900208f6aa640b80ea5c7137bf028c46a5cbe))
+
 ## [1.4.2](https://github.com/molvqingtai/event-hub/compare/v1.4.1...v1.4.2) (2021-06-15)
 
 
