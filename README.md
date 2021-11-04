@@ -62,7 +62,7 @@ hub.emit('custom-send', 'Hello, EventHub!')
 #### on(event,handler)
 
 - **Arguments:**
-  - `{string | Array<string>} event`
+  - `{string | string[]} event`
   - `{Function} handler`
 
 * **Usage:**
@@ -82,7 +82,7 @@ hub.emit('custom-send', 'Hello, EventHub!')
 #### off([event,handler])
 
 - **Arguments:**
-  - `{string | Array<string>} event`
+  - `{string | string[]} event`
   - `{Function} [handler]`
 
 * **Usage:**
@@ -99,7 +99,7 @@ hub.emit('custom-send', 'Hello, EventHub!')
 
   - `{string} event`
 
-  - `{Array<unknown>} ...args`
+  - `{any[]} ...args`
 
 * **Usage:**
 

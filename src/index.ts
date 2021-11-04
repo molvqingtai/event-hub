@@ -15,7 +15,7 @@ export default class EventHub {
     this.add(event, handler, true)
   }
 
-  emit(event: string, ...args: unknown[]): void {
+  emit(event: string, ...args: any[]): void {
     this.listeners.get(event)?.forEach(({ once, handler }) => {
       handler(...args)
       once && this.listeners.delete(event)
