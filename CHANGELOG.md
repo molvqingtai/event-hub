@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/molvqingtai/event-hub/compare/v1.4.3...v1.4.4) (2021-11-04)
+
+
+### Performance Improvements
+
+* optimize emit() parameter type definition ([71a6d30](https://github.com/molvqingtai/event-hub/commit/71a6d30677cb4919a77fa9489da54cdc56c49a97))
+
 ## [1.4.3](https://github.com/molvqingtai/event-hub/compare/v1.4.2...v1.4.3) (2021-11-02)
 
 
