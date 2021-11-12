@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/molvqingtai/event-hub/compare/v1.4.5...v1.5.0) (2021-11-12)
+
+
+### Features
+
+* custom event name support Symbol ([a24fa09](https://github.com/molvqingtai/event-hub/commit/a24fa0976c28bf80333fcc55e3659f804343812c))
+
 ## [1.4.5](https://github.com/molvqingtai/event-hub/compare/v1.4.4...v1.4.5) (2021-11-09)
 
 
