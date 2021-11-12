@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/molvqingtai/event-hub/compare/v1.4.4...v1.4.5) (2021-11-09)
+
+
+### Performance Improvements
+
+* update documentation ([25d6aac](https://github.com/molvqingtai/event-hub/commit/25d6aac228b2aeef047d1626f2938c2ce71e1233))
+
 ## [1.4.4](https://github.com/molvqingtai/event-hub/compare/v1.4.3...v1.4.4) (2021-11-04)
 
 
