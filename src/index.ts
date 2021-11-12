@@ -1,28 +1,29 @@
+type Event = string | symbol
 export default class EventHub {
-  private readonly listeners = new Map<string, Set<{ once: boolean; handler: Function }>>()
+  private readonly listeners = new Map<Event, Set<{ once: boolean; handler: Function }>>()
 
-  private add(event: string | string[], handler: Function, once: boolean): void {
+  private add(event: Event | Event[], handler: Function, once: boolean): void {
     ;[event].flat().forEach((event) => {
       this.listeners.set(event, this.listeners.get(event)?.add({ once, handler }) ?? new Set([{ once, handler }]))
     })
   }
 
-  on(event: string | string[], handler: Function): void {
+  on(event: Event | Event[], handler: Function): void {
     this.add(event, handler, false)
   }
 
-  once(event: string, handler: Function): void {
+  once(event: Event, handler: Function): void {
     this.add(event, handler, true)
   }
 
-  emit(event: string, ...args: any[]): void {
+  emit(event: Event, ...args: any[]): void {
     this.listeners.get(event)?.forEach(({ once, handler }) => {
       handler(...args)
       once && this.listeners.delete(event)
     })
   }
 
-  off(event?: string | string[], handler?: Function): void {
+  off(event?: Event | Event[], handler?: Function): void {
     if (event === undefined) {
       this.listeners.clear()
     } else {

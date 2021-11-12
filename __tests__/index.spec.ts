@@ -2,6 +2,7 @@ import EventHub from '../src'
 
 describe('EventHub unit test', () => {
   let hub: EventHub
+  const towEvent = Symbol('tow-event')
 
   beforeEach(() => {
     hub = new EventHub()
@@ -11,9 +12,9 @@ describe('EventHub unit test', () => {
     const handlerOne = jest.fn()
     const handlerTwo = jest.fn()
     hub.on('one-event', handlerOne)
-    hub.on(['one-event', 'two-event'], handlerTwo)
+    hub.on(['one-event', towEvent], handlerTwo)
     hub.emit('one-event')
-    hub.emit('two-event')
+    hub.emit(towEvent)
     expect(handlerOne).toBeCalledTimes(1)
     expect(handlerTwo).toBeCalledTimes(2)
   })
@@ -41,10 +42,10 @@ describe('EventHub unit test', () => {
   test('Off all event', () => {
     const handler = jest.fn()
     hub.on('one-event', handler)
-    hub.on('two-event', handler)
+    hub.on(towEvent, handler)
     hub.off()
     hub.emit('one-event')
-    hub.emit('two-event')
+    hub.emit(towEvent)
     expect(handler).not.toBeCalled()
   })
 
