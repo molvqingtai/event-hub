@@ -47,12 +47,20 @@ hub.emit('custom-send', 'Hello, EventHub!')
 // => Hello, EventHub!
 ```
 
+**Event**
+
+Custom event name type.
+
+```typescript
+type Event = string | symbol
+```
+
 ### Instance Methods
 
 #### on(event,handler)
 
 - **Arguments:**
-  - `{string | string[]} event`
+  - `{Event | Event[]} event`
   - `{Function} handler`
 
 * **Usage:**
@@ -62,7 +70,7 @@ hub.emit('custom-send', 'Hello, EventHub!')
 #### once(event,handler)
 
 - **Arguments:**
-  - `{string} event`
+  - `{Event} event`
   - `{Function} handler`
 
 * **Usage:**
@@ -72,7 +80,7 @@ hub.emit('custom-send', 'Hello, EventHub!')
 #### off([event,handler])
 
 - **Arguments:**
-  - `{string | string[]} event`
+  - `{Event | Event[]} event`
   - `{Function} [handler]`
 
 * **Usage:**
@@ -87,7 +95,7 @@ hub.emit('custom-send', 'Hello, EventHub!')
 
 - **Arguments:**
 
-  - `{string} event`
+  - `{Event} event`
 
   - `{any} ...args`
 
