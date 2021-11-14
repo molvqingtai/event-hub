@@ -47,15 +47,15 @@ hub.emit('custom-send', 'Hello, EventHub!')
 // => Hello, EventHub!
 ```
 
+### Instance Methods
+
 **Event**
 
-Custom event name type.
+Event name type.
 
 ```typescript
 type Event = string | symbol
 ```
-
-### Instance Methods
 
 #### on(event,handler)
 
