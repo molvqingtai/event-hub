@@ -20,12 +20,8 @@ yarn add @resreq/event-hub
 
 Please add to `import_map.json`.
 
-```json
-{
-  "imports": {
-    "EventHub": "https://deno.land/x/event_hub/src/index.ts"
-  }
-}
+```js
+import EventHub from 'https://esm.sh/@resreq/event-hub'
 ```
 
 ## Documentation
