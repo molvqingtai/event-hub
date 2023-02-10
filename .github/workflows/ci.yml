@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: lts/*
-      - run: pnpm ci
+      - run: pnpm install --ignore-scripts
       - run: pnpm run lint
   tests:
     needs: linter
@@ -25,5 +25,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: lts/*
-      - run: pnpm ci
+      - run: pnpm install --ignore-scripts
       - run: pnpm run test
