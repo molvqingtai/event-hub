@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: lts/*
       # https://github.com/semantic-release/git/issues/209
-      - run: pnpm ci --ignore-scripts
+      - run: pnpm install --ignore-scripts
       - run: pnpm run build
       - run: pnpx semantic-release
         env:
