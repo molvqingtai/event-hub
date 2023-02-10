@@ -1,4 +1,5 @@
 type Event = string | symbol
+
 export default class EventHub {
   private readonly listeners = new Map<Event, Set<{ once: boolean; handler: Function }>>()
 
