@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/molvqingtai/event-hub/compare/v1.5.0...v1.6.0) (2023-02-10)
+
+
+### Features
+
+* binding methods to Class instance object ([281b6fc](https://github.com/molvqingtai/event-hub/commit/281b6fcaa2c459f1125419512028d2f92a0ecdbb))
+* republish ([9959179](https://github.com/molvqingtai/event-hub/commit/9959179df3bf39b5d25d169cf92ebf31821cd3fc))
+* reset release ([085e181](https://github.com/molvqingtai/event-hub/commit/085e181ed1c36df5d30edc91b62c1de25945514d))
+
 # [1.5.0](https://github.com/molvqingtai/event-hub/compare/v1.4.5...v1.5.0) (2021-11-12)
 
 
