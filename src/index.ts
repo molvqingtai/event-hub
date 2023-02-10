@@ -2,6 +2,14 @@ type Event = string | symbol
 export default class EventHub {
   private readonly listeners = new Map<Event, Set<{ once: boolean; handler: Function }>>()
 
+  constructor() {
+    this.add = this.add.bind(this)
+    this.on = this.on.bind(this)
+    this.once = this.once.bind(this)
+    this.emit = this.emit.bind(this)
+    this.off = this.off.bind(this)
+  }
+
   private add(event: Event | Event[], handler: Function, once: boolean): void {
     ;[event].flat().forEach((event) => {
       this.listeners.set(event, this.listeners.get(event)?.add({ once, handler }) ?? new Set([{ once, handler }]))

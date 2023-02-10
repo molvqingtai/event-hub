@@ -24,6 +24,7 @@
     "bus",
     "hub",
     "event",
+    "emitter",
     "trigger",
     "dispatch",
     "listener"
