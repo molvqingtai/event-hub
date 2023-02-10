@@ -3,19 +3,48 @@ name: CD
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
-  release:
+  linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: lts/*
-      # https://github.com/semantic-release/git/issues/209
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: latest
+      - run: pnpm install --ignore-scripts
+      - run: pnpm run lint
+      - run: pnpm run tsc
+  tests:
+    needs: linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: lts/*
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: latest
+      - run: pnpm install --ignore-scripts
+      - run: pnpm run test
+  release:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: lts/*
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: latest
       - run: pnpm install --ignore-scripts
       - run: pnpm run build
       - run: pnpx semantic-release
