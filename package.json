@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "npm run clean && tsc",
-    "test": "vitest run --coverage",
+    "test": "vitest",
     "tsc": "tsc --noEmit",
     "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
     "clean": "rm -rf dist",
