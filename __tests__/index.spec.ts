@@ -1,4 +1,5 @@
 import EventHub from '../src'
+import { test, describe, expect, beforeEach, vi } from 'vitest'
 
 describe('EventHub unit test', () => {
   let hub: EventHub
@@ -9,8 +10,8 @@ describe('EventHub unit test', () => {
   })
 
   test('On and emit', () => {
-    const handlerOne = jest.fn()
-    const handlerTwo = jest.fn()
+    const handlerOne = vi.fn()
+    const handlerTwo = vi.fn()
     hub.on('one-event', handlerOne)
     hub.on(['one-event', towEvent], handlerTwo)
     hub.emit('one-event')
@@ -20,8 +21,8 @@ describe('EventHub unit test', () => {
   })
 
   test('On and off', () => {
-    const handlerOne = jest.fn()
-    const handlerTwo = jest.fn()
+    const handlerOne = vi.fn()
+    const handlerTwo = vi.fn()
     hub.on('one-event', handlerOne)
     hub.on('tow-event', handlerTwo)
     hub.off('one-event')
@@ -32,7 +33,7 @@ describe('EventHub unit test', () => {
   })
 
   test('Once and emit', () => {
-    const handler = jest.fn()
+    const handler = vi.fn()
     hub.once('test-event', handler)
     hub.emit('test-event')
     hub.emit('test-event')
@@ -40,7 +41,7 @@ describe('EventHub unit test', () => {
   })
 
   test('Off all event', () => {
-    const handler = jest.fn()
+    const handler = vi.fn()
     hub.on('one-event', handler)
     hub.on(towEvent, handler)
     hub.off()
@@ -50,8 +51,8 @@ describe('EventHub unit test', () => {
   })
 
   test('Off handler', () => {
-    const handlerOne = jest.fn()
-    const handlerTwo = jest.fn()
+    const handlerOne = vi.fn()
+    const handlerTwo = vi.fn()
     hub.on('test-event', handlerOne)
     hub.on('test-event', handlerTwo)
     hub.off('test-event', handlerOne)
