@@ -32,19 +32,16 @@ Please add to `import_map.json`.
 
 ### Get Started
 
-It is recommended to use the `kebab-case` event name.
-
 ```js
 import EventHub from '@resreq/event-hub'
 
 const hub = new EventHub()
 
 hub.on('custom-send', (message) => {
-  console.log(message)
+  console.log(message) // => Hello, EventHub!
 })
 
 hub.emit('custom-send', 'Hello, EventHub!')
-// => Hello, EventHub!
 ```
 
 ### Instance Methods
