@@ -1,7 +1,9 @@
-type Event = string | symbol
+type Event = string | number | symbol
+type Listener = (...args: any[]) => void
 
-export default class EventHub {
-  private readonly listeners = new Map<Event, Set<{ once: boolean; handler: Function }>>()
+
+export default class EventHub<EventMap extends Record<Event, Listener> = Record<Event, Listener>> {
+  readonly listeners = new Map<Event, Set<{ once: boolean; handler: Listener }>>()
 
   constructor() {
     this.add = this.add.bind(this)
@@ -11,28 +13,32 @@ export default class EventHub {
     this.off = this.off.bind(this)
   }
 
-  private add(event: Event | Event[], handler: Function, once: boolean): void {
+  add<K extends keyof EventMap>(event: K | K[], handler: EventMap[K], once: boolean): void {
     ;[event].flat().forEach((event) => {
       this.listeners.set(event, this.listeners.get(event)?.add({ once, handler }) ?? new Set([{ once, handler }]))
     })
   }
 
-  on(event: Event | Event[], handler: Function): void {
+  on<K extends keyof EventMap>(event: K, handler: EventMap[K]): void
+  on<K extends keyof EventMap>(event: K[], handler: EventMap[K]): void
+  on<K extends keyof EventMap>(event: K | K[], handler: EventMap[K]): void {
     this.add(event, handler, false)
   }
 
-  once(event: Event, handler: Function): void {
+  once<K extends keyof EventMap>(event: K, handler: EventMap[K]): void {
     this.add(event, handler, true)
   }
 
-  emit(event: Event, ...args: any[]): void {
+  emit<K extends keyof EventMap>(event: K, ...args: Parameters<EventMap[K]>): void {
     this.listeners.get(event)?.forEach(({ once, handler }) => {
       handler(...args)
       once && this.listeners.delete(event)
     })
   }
 
-  off(event?: Event | Event[], handler?: Function): void {
+  off<K extends keyof EventMap>(event?: K, handler?: EventMap[K]): void
+  off<K extends keyof EventMap>(event?: K[], handler?: EventMap[K]): void
+  off<K extends keyof EventMap>(event?: K | K[], handler?: EventMap[K]): void {
     if (event === undefined) {
       this.listeners.clear()
     } else {
