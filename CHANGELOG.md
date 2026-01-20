@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/molvqingtai/event-hub/compare/v1.7.0...v1.7.1) (2026-01-20)
+
+
+### Bug Fixes
+
+* trigger release ([40dd1ee](https://github.com/molvqingtai/event-hub/commit/40dd1eed516353f3596813d1be54602b8da7a2bc))
+
 # [1.7.0](https://github.com/molvqingtai/event-hub/compare/v1.6.0...v1.7.0) (2026-01-20)
 
 
