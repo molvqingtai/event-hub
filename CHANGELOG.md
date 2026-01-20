@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/molvqingtai/event-hub/compare/v1.6.0...v1.7.0) (2026-01-20)
+
+
+### Features
+
+* support EventMap ([6aa9ffb](https://github.com/molvqingtai/event-hub/commit/6aa9ffb559dbecd5e190043c2b036347ff20e1fb))
+
 # [1.6.0](https://github.com/molvqingtai/event-hub/compare/v1.5.0...v1.6.0) (2023-02-10)
 
 
