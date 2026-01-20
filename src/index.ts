@@ -1,7 +1,6 @@
 type Event = string | number | symbol
 type Listener = (...args: any[]) => void
 
-
 export default class EventHub<EventMap extends Record<Event, Listener> = Record<Event, Listener>> {
   readonly listeners = new Map<Event, Set<{ once: boolean; handler: Listener }>>()
 
