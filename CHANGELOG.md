@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/molvqingtai/event-hub/compare/v1.7.1...v1.7.2) (2026-01-20)
+
+
+### Bug Fixes
+
+* update npm token publish permission ([aa15666](https://github.com/molvqingtai/event-hub/commit/aa15666bd3dcb4ae652a62bfdd2cc7f17aa87aa3))
+
 ## [1.7.1](https://github.com/molvqingtai/event-hub/compare/v1.7.0...v1.7.1) (2026-01-20)
 
 
